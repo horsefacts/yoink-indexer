@@ -1,17 +1,14 @@
 import { ponder } from "@/generated";
 
-ponder.on("Yoink:ApprovalForAll", async ({ event, context }) => {
-  console.log(event.args);
-});
+ponder.on("Yoink:Yoinked", async ({ event, context }) => {
+  const { Yoink } = context.db;
 
-ponder.on("Yoink:TransferBatch", async ({ event, context }) => {
-  console.log(event.args);
-});
-
-ponder.on("Yoink:TransferSingle", async ({ event, context }) => {
-  console.log(event.args);
-});
-
-ponder.on("Yoink:URI", async ({ event, context }) => {
-  console.log(event.args);
+  await Yoink.create({
+    id: event.log.id,
+    data: {
+      timestamp: event.block.timestamp,
+      by: event.args.by,
+      from: event.args.from
+    }
+  });
 });

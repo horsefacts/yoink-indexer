@@ -1,8 +1,10 @@
 import { createSchema } from "@ponder/core";
 
 export default createSchema((p) => ({
-  Example: p.createTable({
+  Yoink: p.createTable({
     id: p.string(),
-    name: p.string().optional(),
+    timestamp: p.bigint(),
+    by: p.hex(),
+    from: p.hex()
   }),
 }));

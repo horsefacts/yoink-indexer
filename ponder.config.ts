@@ -5,17 +5,17 @@ import { YoinkAbi } from "./abis/YoinkAbi";
 
 export default createConfig({
   networks: {
-    baseSepolia: {
-      chainId: 84532,
-      transport: http(process.env.PONDER_RPC_URL_84532),
+    base: {
+      chainId: 8453,
+      transport: http(process.env.PONDER_RPC_URL_8453),
     },
   },
   contracts: {
     Yoink: {
       abi: YoinkAbi,
-      address: "0xD4e679003679F84eDa0e8fa973D0F62c7dEA29C4",
-      network: "baseSepolia",
-      startBlock: 17439250,
+      address: "0x4bBFD120d9f352A0BEd7a014bd67913a2007a878",
+      network: "base",
+      startBlock: 22164267,
     },
   },
 });

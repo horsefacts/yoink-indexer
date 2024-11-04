@@ -106,6 +106,12 @@ export const YoinkAbi = [
     inputs: [
       { indexed: true, internalType: "address", name: "by", type: "address" },
       { indexed: true, internalType: "address", name: "from", type: "address" },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "timeHeld",
+        type: "uint256",
+      },
     ],
     name: "Yoinked",
     type: "event",
@@ -120,6 +126,13 @@ export const YoinkAbi = [
   {
     inputs: [],
     name: "FLAG_ID",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "TROPHY_ID",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
@@ -144,6 +157,13 @@ export const YoinkAbi = [
       { internalType: "uint256[]", name: "balances", type: "uint256[]" },
     ],
     stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "contractURI",
+    outputs: [{ internalType: "string", name: "", type: "string" }],
+    stateMutability: "pure",
     type: "function",
   },
   {
@@ -224,6 +244,44 @@ export const YoinkAbi = [
   },
   {
     inputs: [
+      { internalType: "address", name: "holder", type: "address" },
+      {
+        components: [
+          { internalType: "uint256", name: "yoinks", type: "uint256" },
+          { internalType: "uint256", name: "time", type: "uint256" },
+          { internalType: "uint256", name: "lastYoinkedAt", type: "uint256" },
+        ],
+        internalType: "struct Score",
+        name: "holderScore",
+        type: "tuple",
+      },
+    ],
+    name: "generateTrophyJSON",
+    outputs: [{ internalType: "string", name: "", type: "string" }],
+    stateMutability: "pure",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "address", name: "holder", type: "address" },
+      {
+        components: [
+          { internalType: "uint256", name: "yoinks", type: "uint256" },
+          { internalType: "uint256", name: "time", type: "uint256" },
+          { internalType: "uint256", name: "lastYoinkedAt", type: "uint256" },
+        ],
+        internalType: "struct Score",
+        name: "holderScore",
+        type: "tuple",
+      },
+    ],
+    name: "generateTrophySVG",
+    outputs: [{ internalType: "string", name: "", type: "string" }],
+    stateMutability: "pure",
+    type: "function",
+  },
+  {
+    inputs: [
       { internalType: "address", name: "owner", type: "address" },
       { internalType: "address", name: "operator", type: "address" },
     ],
@@ -243,6 +301,13 @@ export const YoinkAbi = [
     inputs: [],
     name: "lastYoinkedBy",
     outputs: [{ internalType: "address", name: "", type: "address" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "mostYoinks",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
   },
@@ -304,6 +369,13 @@ export const YoinkAbi = [
     inputs: [{ internalType: "bytes4", name: "interfaceId", type: "bytes4" }],
     name: "supportsInterface",
     outputs: [{ internalType: "bool", name: "result", type: "bool" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "topYoinker",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
     stateMutability: "view",
     type: "function",
   },

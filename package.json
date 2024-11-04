@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@ponder/core": "^0.6.24",
-    "hono": "^4.5.0",
+    "hono": "4.6.8",
     "viem": "^2.21.3"
   },
   "devDependencies": {
