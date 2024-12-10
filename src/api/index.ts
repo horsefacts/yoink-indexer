@@ -24,3 +24,41 @@ ponder.get("/leaderboard", async (c) => {
 
   return c.json(leaderboard);
 });
+
+ponder.get("/leaderboard/:address", async (c) => {
+  const address = c.req.param("address").toLowerCase();
+
+  const allRankings = await c.db
+    .select({
+      address: c.tables.Yoink.by,
+      yoinks: sql<number>`count(${c.tables.Yoink.id})`,
+    })
+    .from(c.tables.Yoink)
+    .groupBy(c.tables.Yoink.by)
+    .orderBy(sql`count(${c.tables.Yoink.id}) DESC`);
+
+  const targetIndex = allRankings.findIndex(
+    (rank) => rank.address.toLowerCase() === address
+  );
+
+  if (targetIndex === -1) {
+    return c.json({
+      targetRank: null,
+      rankings: [],
+    });
+  }
+
+  const start = Math.max(0, targetIndex - 3);
+  const end = Math.min(allRankings.length, targetIndex + 4);
+
+  const nearbyRankings = allRankings.slice(start, end).map((rank, i) => ({
+    rank: start + i + 1,
+    address: rank.address,
+    yoinks: rank.yoinks,
+  }));
+
+  return c.json({
+    targetRank: targetIndex + 1,
+    rankings: nearbyRankings,
+  });
+});
