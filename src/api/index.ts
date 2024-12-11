@@ -62,3 +62,25 @@ ponder.get("/leaderboard/:address", async (c) => {
     rankings: nearbyRankings,
   });
 });
+
+ponder.get("/yoinks-since/:id", async (c) => {
+  const id = c.req.param("id");
+
+  const referenceYoink = await c.db
+    .select()
+    .from(c.tables.Yoink)
+    .where(sql`${c.tables.Yoink.id} = ${id}`)
+    .limit(1);
+
+  if (!referenceYoink[0]) {
+    return c.json([]);
+  }
+
+  const yoinks = await c.db
+    .select()
+    .from(c.tables.Yoink)
+    .where(sql`${c.tables.Yoink.timestamp} > ${referenceYoink[0].timestamp}`)
+    .orderBy(desc(c.tables.Yoink.timestamp));
+
+  return c.json(replaceBigInts(yoinks, (v) => Number(v)));
+});
