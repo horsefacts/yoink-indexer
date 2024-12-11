@@ -48,18 +48,14 @@ ponder.get("/leaderboard/:address", async (c) => {
     });
   }
 
-  const start = Math.max(0, targetIndex - 5);
-  const end = Math.min(allRankings.length, start + 10);
+  const end = Math.min(allRankings.length, targetIndex + 7);
+  const start = Math.max(0, end - 10);
 
-  const adjustedStart = Math.max(0, end - 10);
-
-  const nearbyRankings = allRankings
-    .slice(adjustedStart, end)
-    .map((rank, i) => ({
-      rank: adjustedStart + i + 1,
-      address: rank.address,
-      yoinks: rank.yoinks,
-    }));
+  const nearbyRankings = allRankings.slice(start, end).map((rank, i) => ({
+    rank: start + i + 1,
+    address: rank.address,
+    yoinks: rank.yoinks,
+  }));
 
   return c.json({
     targetRank: targetIndex + 1,
