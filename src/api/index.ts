@@ -1,6 +1,14 @@
 import { ponder } from "@/generated";
 import { replaceBigInts } from "@ponder/utils";
 import { sql, desc } from "drizzle-orm";
+import castOutPlayers from "../../data/cast_out_players.json";
+
+interface PlayerResult {
+  address: string;
+  username: string;
+  tribe: string;
+  yoinks: number;
+}
 
 ponder.get("/recent", async (c) => {
   const yoinks = await c.db
@@ -83,4 +91,58 @@ ponder.get("/yoinks-since/:id", async (c) => {
     .orderBy(desc(c.tables.Yoink.timestamp));
 
   return c.json(replaceBigInts(yoinks, (v) => Number(v)));
+});
+
+ponder.get("/castout", async (c) => {
+  const individualCounts = await c.db
+    .select({
+      address: c.tables.Yoink.by,
+      yoinks: sql<number>`count(${c.tables.Yoink.id})`,
+    })
+    .from(c.tables.Yoink)
+    .groupBy(c.tables.Yoink.by);
+
+  const addressToTribe = new Map(
+    castOutPlayers.map((player) => [
+      player.address.toLowerCase(),
+      {
+        tribe: player.tribe,
+        username: player.username,
+      },
+    ])
+  );
+
+  const tribeAggregates = new Map<string, number>();
+  const individualResults: PlayerResult[] = [];
+
+  individualCounts.forEach(({ address, yoinks }) => {
+    const playerInfo = addressToTribe.get(address.toLowerCase());
+    if (playerInfo) {
+      individualResults.push({
+        address,
+        username: playerInfo.username,
+        tribe: playerInfo.tribe,
+        yoinks,
+      });
+
+      const currentTribeTotal = tribeAggregates.get(playerInfo.tribe) || 0;
+      tribeAggregates.set(playerInfo.tribe, currentTribeTotal + yoinks);
+    }
+  });
+
+  const tribeResults = Array.from(tribeAggregates.entries())
+    .map(([tribe, totalYoinks]) => ({
+      tribe,
+      totalYoinks,
+    }))
+    .sort((a, b) => b.totalYoinks - a.totalYoinks);
+
+  const sortedIndividualResults = individualResults.sort(
+    (a, b) => b.yoinks - a.yoinks
+  );
+
+  return c.json({
+    players: sortedIndividualResults,
+    tribes: tribeResults,
+  });
 });
