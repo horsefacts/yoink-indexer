@@ -100,7 +100,9 @@ ponder.get("/castout", async (c) => {
       yoinks: sql<number>`count(${c.tables.Yoink.id})`,
     })
     .from(c.tables.Yoink)
-    .where(sql`${c.tables.Yoink.timestamp} >= 1734026400`)
+    .where(
+      sql`${c.tables.Yoink.timestamp} >= 1734026400 AND ${c.tables.Yoink.timestamp} < 1734105600`
+    )
     .groupBy(c.tables.Yoink.by);
 
   const addressToTribe = new Map(
