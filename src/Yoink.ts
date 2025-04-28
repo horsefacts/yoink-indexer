@@ -1,14 +1,11 @@
-import { ponder } from "@/generated";
+import { ponder } from "ponder:registry";
+import { yoinks } from "ponder:schema";
 
 ponder.on("Yoink:Yoinked", async ({ event, context }) => {
-  const { Yoink } = context.db;
-
-  await Yoink.create({
-    id: event.log.id,
-    data: {
-      timestamp: event.block.timestamp,
-      by: event.args.by,
-      from: event.args.from
-    }
+  await context.db.insert(yoinks).values({
+    id: event.id,
+    timestamp: event.block.timestamp,
+    by: event.args.by,
+    from: event.args.from,
   });
 });
