@@ -1,14 +1,242 @@
 [
     {
-      "tribe": "Horse",
-      "fid": 3621,
-      "username": "horsefacts",
-      "address": "0xE36D2F95a9B69dF60DBF029BF7c4fa7D1FF56b90"
+      "tribe": "Cast Me Outside",
+      "fid": 2982,
+      "username": "jacy",
+      "address": "0xDE6EfF062895C1669c4920f96206e57C8C11A6E5"
     },
     {
-      "tribe": "Prof",
-      "fid": 4167,
-      "username": "nounishprof",
-      "address": "0x9353CC2583356cE6eA8f92E239D7C9Eb8412ACAF"
+      "tribe": "Cast Me Outside",
+      "fid": 318447,
+      "username": "plantsnft",
+      "address": "0x7c527d956f47920Fec38dFc5834Fe31b5A72dB12"
+    },
+    {
+      "tribe": "Cast Me Outside",
+      "fid": 417851,
+      "username": "tracyit",
+      "address": "0x98f047fce42C8689F6ea231e24fe2d394cCE7958"
+    },
+    {
+      "tribe": "Cast Me Outside",
+      "fid": 311933,
+      "username": "burrrrrberry",
+      "address": "0xD9ff7342AEB11bA4548670ff2f5255b90126958d"
+    },
+    {
+      "tribe": "Cast Me Outside",
+      "fid": 938023,
+      "username": "warpc0st",
+      "address": "0x78076281e1b945B377231692361F3B2eDBe5BF90"
+    },
+    {
+      "tribe": "DV",
+      "fid": 284679,
+      "username": "degenveteran.eth",
+      "address": "0xA33CC67E1Dd105512dE3b94e86724c8876C72dE6"
+    },
+    {
+      "tribe": "DV",
+      "fid": 410577,
+      "username": "zwillow",
+      "address": "0x9EcD4ceDA75d840aF1CAba4203a0aDd61E94F63C"
+    },
+    {
+      "tribe": "DV",
+      "fid": 483462,
+      "username": "janicka",
+      "address": "0x3AE5d538f2E3BBa7949e9bfb46FF664A0e68Fc06"
+    },
+    {
+      "tribe": "DV",
+      "fid": 13874,
+      "username": "thedude",
+      "address": "0xdD8A40a15F0fe67d4eC52aDF0Ee24489E8d8A58A"
+    },
+    {
+      "tribe": "DV",
+      "fid": 15351,
+      "username": "0ffline",
+      "address": "0xF4901a3dE0415c4D5608708DEF4C8E5b8e41F45d"
+    },
+    {
+      "tribe": "Good News",
+      "fid": 1025773,
+      "username": "bigbearmama",
+      "address": "0x05C73B7aA4f9D14Bb39c8098bFb8ac7C46722ACc"
+    },
+    {
+      "tribe": "Good News",
+      "fid": 6501,
+      "username": "amelie",
+      "address": "0x19dcc404ae1B173E5127DFf1f898e7656C78e42A"
+    },
+    {
+      "tribe": "Good News",
+      "fid": 12921,
+      "username": "jessyjeanne",
+      "address": "0x03BCAa09334df40713baC77Bf98AbafAdCe4d38A"
+    },
+    {
+      "tribe": "Good News",
+      "fid": 14396,
+      "username": "rachelw",
+      "address": "0x0C519368Cc641BB7B93Bbd333E65FcF39616e11d"
+    },
+    {
+      "tribe": "Good News",
+      "fid": 268290,
+      "username": "breadcat",
+      "address": "0x2247bC5b6a1af707693270c3fc394Fbca4536604"
+    },
+    {
+      "tribe": "Lil Fun",
+      "fid": 277952,
+      "username": "dummie.eth",
+      "address": "0x41a53BaCDbf369377870d1377864E36176751e8d"
+    },
+    {
+      "tribe": "Lil Fun",
+      "fid": 15255,
+      "username": "ayomide.eth",
+      "address": "0xfBd9f91ba3954F23244738885cb56b4be61ecE39"
+    },
+    {
+      "tribe": "Lil Fun",
+      "fid": 218957,
+      "username": "genuinejack",
+      "address": "0x1fbbBb6bC0b66e9BCb4CbB4924F6f49C41f3cfD0"
+    },
+    {
+      "tribe": "Lil Fun",
+      "fid": 5466,
+      "username": "nataliecrue",
+      "address": "0xfc5b33cF37b42f4553C728Ad3Bf30cC9C122fCBd"
+    },
+    {
+      "tribe": "Lil Fun",
+      "fid": 4243,
+      "username": "jonruth",
+      "address": "0x6875A13f9747BF787207B230907B5fBBa33b6C8f"
+    },
+    {
+      "tribe": "Lil Sock Gang",
+      "fid": 263648,
+      "username": "fattybuthappy",
+      "address": "0x14935B6B19c0b4B3a7F68d9B8E4E8652315759D0"
+    },
+    {
+      "tribe": "Lil Sock Gang",
+      "fid": 3974,
+      "username": "indexcard.eth",
+      "address": "0xC8d52F7c9B8E6E4d8C061257633a1998610230ad"
+    },
+    {
+      "tribe": "Lil Sock Gang",
+      "fid": 19530,
+      "username": "mikegood",
+      "address": "0xa81317e1fE6F385Cd0065b4667B95AB186858175"
+    },
+    {
+      "tribe": "Lil Sock Gang",
+      "fid": 3734,
+      "username": "sasquatch",
+      "address": "0x76607b6f78191eef8934eb45eCB030dEF67d8b33"
+    },
+    {
+      "tribe": "Lil Sock Gang",
+      "fid": 20147,
+      "username": "bixbite",
+      "address": "0xeF6085143d47d1010047C03F7dd51D7F79c8a24F"
+    },
+    {
+      "tribe": "Lils1",
+      "fid": 19640,
+      "username": "zaal",
+      "address": "0xb79cdAbF6f2fB8Fea70C2e515AEC35E827bF7932"
+    },
+    {
+      "tribe": "Lils1",
+      "fid": 308045,
+      "username": "0xsamir",
+      "address": "0xE5C1255f09d478507Cd015BfD24C75F610F089cF"
+    },
+    {
+      "tribe": "Lils1",
+      "fid": 1574,
+      "username": "treegirl",
+      "address": "0xC1B4046EfdDca20B654f3C42C94C212158eCf67F"
+    },
+    {
+      "tribe": "Lils1",
+      "fid": 191593,
+      "username": "pip",
+      "address": "0x9909BBce017E7abb98d017E1f9e1121e113819a4"
+    },
+    {
+      "tribe": "Lils1",
+      "fid": 847988,
+      "username": "chompix",
+      "address": "0xbA17D65F97d0e7a686B156c380C9f22491C3378F"
+    },
+    {
+      "tribe": "Mayaa",
+      "fid": 300986,
+      "username": "asha",
+      "address": "0x9Adb41E0DA07E0C87FF7462b19c09bB9E0e36114"
+    },
+    {
+      "tribe": "Mayaa",
+      "fid": 348611,
+      "username": "alleytac",
+      "address": "0x92339459CCbFbCE54137a56cC86cCfE63a776BFc"
+    },
+    {
+      "tribe": "Mayaa",
+      "fid": 281676,
+      "username": "anemale.eth",
+      "address": "0x341bEC84E4fa95B3c00eFB6f4b1036AA6b2Ac787"
+    },
+    {
+      "tribe": "Mayaa",
+      "fid": 375831,
+      "username": "milibooo",
+      "address": "0x796355630aACB83eA13b39cFDd4c1a850A101690"
+    },
+    {
+      "tribe": "Mayaa",
+      "fid": 392370,
+      "username": "yatima",
+      "address": "0xfa8125F43aA3dcDF57eA4c68d8C67c156CF4C24A"
+    },
+    {
+      "tribe": "Purple",
+      "fid": 247143,
+      "username": "kylepatrick.eth",
+      "address": "0x33bE45C761b50f44e966d901Fa6D0528A74865e5"
+    },
+    {
+      "tribe": "Purple",
+      "fid": 195117,
+      "username": "jacque",
+      "address": "0x517AED69de606b3Cf120c8f50bC5c932c740Fb2A"
+    },
+    {
+      "tribe": "Purple",
+      "fid": 190218,
+      "username": "icetoad.eth",
+      "address": "0xAa7Ed91fC90B9d92b39fa16E1f2016cDb0497B4C"
+    },
+    {
+      "tribe": "Purple",
+      "fid": 8332,
+      "username": "awedjob",
+      "address": "0x3EBCecEA588e5a6dFad865Fc43732D14e1Ac850C"
+    },
+    {
+      "tribe": "Purple",
+      "fid": 472,
+      "username": "ccarella.eth",
+      "address": "0x3d0438Cf16E6BF871D1F28E18B5BB175762F3F7C"
     }
   ]
