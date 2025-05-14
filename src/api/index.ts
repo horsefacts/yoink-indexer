@@ -105,7 +105,7 @@ app.get("/castout", async (c) => {
     })
     .from(schema.yoinks)
     .where(
-      sql`${schema.yoinks.timestamp} >= 1734026400`
+      sql`${schema.yoinks.timestamp} >= 1734026400 AND ${schema.yoinks.timestamp} < 1747324800`
     )
     .groupBy(schema.yoinks.by);
 
