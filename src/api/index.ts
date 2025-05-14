@@ -27,7 +27,7 @@ app.get("/leaderboard", async (c) => {
   const leaderboard = await db
     .select({
       address: schema.yoinks.by,
-      yoinks: sql<number>`count(${schema.yoinks.id})`,
+      yoinks: sql<string>`count(${schema.yoinks.id})`,
     })
     .from(schema.yoinks)
     .groupBy(schema.yoinks.by)
@@ -43,7 +43,7 @@ app.get("/leaderboard/:address", async (c) => {
   const allRankings = await db
     .select({
       address: schema.yoinks.by,
-      yoinks: sql<number>`count(${schema.yoinks.id})`,
+      yoinks: sql<string>`count(${schema.yoinks.id})`,
     })
     .from(schema.yoinks)
     .groupBy(schema.yoinks.by)
@@ -101,7 +101,7 @@ app.get("/castout", async (c) => {
   const individualCounts = await db
     .select({
       address: schema.yoinks.by,
-      yoinks: sql<number>`count(${schema.yoinks.id})`,
+      yoinks: sql<string>`count(${schema.yoinks.id})`,
     })
     .from(schema.yoinks)
     .where(
@@ -130,11 +130,11 @@ app.get("/castout", async (c) => {
           address,
           username: playerInfo.username,
           tribe: playerInfo.tribe,
-          yoinks,
+          yoinks: Number(yoinks),
         });
 
         const currentTribeTotal = tribeAggregates.get(playerInfo.tribe) || 0;
-        tribeAggregates.set(playerInfo.tribe, currentTribeTotal + yoinks);
+        tribeAggregates.set(playerInfo.tribe, currentTribeTotal + Number(yoinks));
       }
     }
   });
